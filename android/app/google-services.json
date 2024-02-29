@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "612113481876",
+    "firebase_url": "https://smart-panel-light-transformer-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "smart-panel-light-transformer",
+    "storage_bucket": "smart-panel-light-transformer.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:612113481876:android:d5f41ecc55b273cafb7481",
+        "android_client_info": {
+          "package_name": "com.company.lightblink"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxD-Ink_uiAAGfypR03R7i0AdY5U64sKg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:612113481876:android:440d84cc5e3794c5fb7481",
+        "android_client_info": {
+          "package_name": "com.example.smarthomeui"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxD-Ink_uiAAGfypR03R7i0AdY5U64sKg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
