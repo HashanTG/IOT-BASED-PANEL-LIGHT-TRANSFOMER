@@ -14,6 +14,9 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final double horizontalPadding = 40;
   final double verticalPadding = 25;
+  bool _isLightOn = false;
+  bool _isLightOn1 = false;
+  bool _isLightOn2 = false;
 
   List mySmartDevices = [
     ["Smart Light", "lib/icons/light-bulb.png", false],
@@ -22,7 +25,7 @@ class _HomePageState extends State<HomePage> {
     ["Smart Light", "lib/icons/light-bulb.png", false],
   ];
 
-  bool status = true;
+  bool status = false;
   void powerSwitchChanged(bool value, int index) {
     setState(() {
       mySmartDevices[index][2] = value;
@@ -130,7 +133,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 30),
 
             // grid
             // Expanded(
@@ -153,27 +156,40 @@ class _HomePageState extends State<HomePage> {
             //   ),
             // ),
 
-            Center(
-              child: ElevatedButton.icon(
-                onPressed: state,
-                icon: const Icon(
-                  Icons.lightbulb,
-                  size: 50,
-                  color: Color.fromARGB(255, 0, 0, 0),
-                ), // Your desired icon
-                label: const Text('ROOM 01     ',
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Color.fromARGB(255, 0, 0, 0),
-                    )),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Color.fromARGB(0, 38, 40, 48),
-                  fixedSize:
-                      const Size(500, 70), // Set the size to make it square
-                  shape: const RoundedRectangleBorder(
-                    // Shape for square button
-                    borderRadius: BorderRadius.all(
-                        Radius.circular(10)), // Remove rounded corners
+            Padding(
+              padding: const EdgeInsets.only(left: 30, right: 30),
+              child: Center(
+                child: ElevatedButton.icon(
+                  onPressed: () {
+                    setState(() {
+                      _isLightOn = !_isLightOn;
+                      state(); // Toggle the state
+                      // Add your code to control the actual light here
+                    });
+                  },
+                  icon: Icon(
+                    _isLightOn
+                        ? Icons.lightbulb
+                        : Icons.lightbulb_outline, // Change icon based on state
+                    size: 50,
+                    color: Color.fromARGB(255, 0, 0, 0),
+                  ), // Your desired icon
+                  label: const Text('ROOM 01     ',
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Color.fromARGB(255, 0, 0, 0),
+                      )),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: _isLightOn
+                        ? Color.fromARGB(255, 250, 57, 83)
+                        : Color.fromARGB(0, 155, 160, 181),
+                    fixedSize:
+                        const Size(500, 70), // Set the size to make it square
+                    shape: const RoundedRectangleBorder(
+                      // Shape for square button
+                      borderRadius: BorderRadius.all(
+                          Radius.circular(10)), // Remove rounded corners
+                    ),
                   ),
                 ),
               ),
@@ -182,27 +198,40 @@ class _HomePageState extends State<HomePage> {
               height: 20,
             ),
 
-            Center(
-              child: ElevatedButton.icon(
-                onPressed: state,
-                icon: const Icon(
-                  Icons.lightbulb,
-                  size: 50,
-                  color: Color.fromARGB(255, 0, 0, 0),
-                ), // Your desired icon
-                label: const Text('LIVING ROOM',
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Color.fromARGB(255, 0, 0, 0),
-                    )),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Color.fromARGB(0, 38, 40, 48),
-                  fixedSize:
-                      const Size(500, 70), // Set the size to make it square
-                  shape: const RoundedRectangleBorder(
-                    // Shape for square button
-                    borderRadius: BorderRadius.all(
-                        Radius.circular(10)), // Remove rounded corners
+            Padding(
+              padding: const EdgeInsets.only(left: 30, right: 30),
+              child: Center(
+                child: ElevatedButton.icon(
+                  onPressed: () {
+                    setState(() {
+                      _isLightOn1 = !_isLightOn1;
+                      // Toggle the state
+                      // Add your code to control the actual light here
+                    });
+                  },
+                  icon: Icon(
+                    _isLightOn1
+                        ? Icons.lightbulb
+                        : Icons.lightbulb_outline, // Change icon based on state
+                    size: 50,
+                    color: Color.fromARGB(255, 0, 0, 0),
+                  ), // Your desired icon
+                  label: const Text('LIVING ROOM',
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Color.fromARGB(255, 0, 0, 0),
+                      )),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: _isLightOn1
+                        ? Color.fromARGB(255, 250, 57, 83)
+                        : Color.fromARGB(0, 155, 160, 181),
+                    fixedSize:
+                        const Size(500, 70), // Set the size to make it square
+                    shape: const RoundedRectangleBorder(
+                      // Shape for square button
+                      borderRadius: BorderRadius.all(
+                          Radius.circular(10)), // Remove rounded corners
+                    ),
                   ),
                 ),
               ),
@@ -211,31 +240,59 @@ class _HomePageState extends State<HomePage> {
               height: 20,
             ),
 
-            Center(
-              child: ElevatedButton.icon(
-                onPressed: state,
-                icon: const Icon(
-                  Icons.lightbulb,
-                  size: 50,
-                  color: Color.fromARGB(255, 0, 0, 0),
-                ), // Your desired icon
-                label: const Text('KITCHEN    ',
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Color.fromARGB(255, 0, 0, 0),
-                    )),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Color.fromARGB(0, 38, 40, 48),
-                  fixedSize:
-                      const Size(500, 70), // Set the size to make it square
-                  shape: const RoundedRectangleBorder(
-                    // Shape for square button
-                    borderRadius: BorderRadius.all(
-                        Radius.circular(10)), // Remove rounded corners
+            Padding(
+              padding: const EdgeInsets.only(left: 30, right: 30),
+              child: Center(
+                child: ElevatedButton.icon(
+                  onPressed: () {
+                    setState(() {
+                      _isLightOn2 = !_isLightOn2;
+                      // Toggle the state
+                      // Add your code to control the actual light here
+                    });
+                  },
+                  icon: Icon(
+                    _isLightOn2
+                        ? Icons.lightbulb
+                        : Icons.lightbulb_outline, // Change icon based on state
+                    size: 50,
+                    color: Color.fromARGB(255, 0, 0, 0),
+                  ), // Your desired icon
+                  label: const Text('KITCHEN    ',
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Color.fromARGB(255, 0, 0, 0),
+                      )),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: _isLightOn2
+                        ? Color.fromARGB(255, 250, 57, 83)
+                        : Color.fromARGB(0, 155, 160, 181),
+                    fixedSize:
+                        const Size(500, 70), // Set the size to make it square
+                    shape: const RoundedRectangleBorder(
+                      // Shape for square button
+                      borderRadius: BorderRadius.all(
+                          Radius.circular(10)), // Remove rounded corners
+                    ),
                   ),
                 ),
               ),
             ),
+            const SizedBox(
+              height: 70,
+            ),
+            Center(
+              child: FloatingActionButton(
+                backgroundColor: Color.fromARGB(255, 73, 71, 72),
+                onPressed: () {
+                  // Add your code to add a new device here
+                },
+                child: const Icon(
+                  Icons.add,
+                  color: Colors.white,
+                ),
+              ),
+            )
           ],
         ),
       ),
